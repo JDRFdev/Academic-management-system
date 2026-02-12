@@ -26,12 +26,12 @@ class User {
         return $this->name;
     }
     
+    public function getPassword(){
+        return $this->password;
+    }
+
     public function getRol() {
         return $this->rol;
-    }
-    
-    public function getPassword() {
-        return $this->password;
     }
     
     public function setId($id) {
@@ -50,8 +50,10 @@ class User {
         $this->rol = $rol;
     }
     
-    public function setPassword($password) {
-        $this->password = $password;
+    public function setPassword($password){
+        $this->password=$password;
     }
+
+    
 }
 ?>
