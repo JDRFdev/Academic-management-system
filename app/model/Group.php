@@ -1,49 +1,78 @@
 <?php
 require_once "User.php";
+require_once "Activity.php";
 
 class Group {
-    private $id;
-    private $name;
-    private $description;
-    private $User;
+    private ?int $id;
+    private string $name;
+    private string $description;
+    private User $creator;  
+    private array $members;  
+    private array $activities;  
     
-    public function __construct($id = null, $name = null, $description = null, $User = null) {
+    public function __construct(
+        string $name,
+        string $description,
+        User $creator,
+        ?int $id = null,
+        array $members = [],
+        array $activities = []
+    ) {
         $this->id = $id;
         $this->name = $name;
         $this->description = $description;
-        $this->User = $User;
+        $this->creator = $creator;
+        $this->members = $members;
+        $this->activities = $activities;
     }
     
-    public function getId() {
+    public function getId(): ?int {
         return $this->id;
     }
     
-    public function getName() {
+    public function getName(): string {
         return $this->name;
     }
     
-    public function getDescription() {
+    public function getDescription(): string {
         return $this->description;
     }
     
-    public function getUser() {
-        return $this->User;
+    public function getCreator(): User {
+        return $this->creator;
     }
     
-    public function setId($id) {
+    public function getMembers(): array {
+        return $this->members;
+    }
+    
+    public function getActivities(): array {
+        return $this->activities;
+    }
+    
+    public function setId(int $id): void {
         $this->id = $id;
     }
     
-    public function setName($name) {
+    public function setName(string $name): void {
         $this->name = $name;
     }
     
-    public function setDescription($description) {
+    public function setDescription(string $description): void {
         $this->description = $description;
     }
     
-    public function setUser($User) {
-        $this->User = $User;
+    public function setCreator(User $creator): void {
+        $this->creator = $creator;
     }
+    
+    public function setMembers(array $members): void {
+        $this->members = $members;
+    }
+    
+    public function setActivities(array $activities): void {
+        $this->activities = $activities;
+    }
+    
 }
 ?>
