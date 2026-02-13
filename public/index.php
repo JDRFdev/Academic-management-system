@@ -8,4 +8,5 @@ $pd2 = $d2->getConnection();
 if($pd1===$pd2){
     echo "Andres es gey xd.\n";
 }
+
 ?>

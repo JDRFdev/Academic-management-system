@@ -8,8 +8,39 @@
     <title>Login</title>
 </head>
 <body>
-    <div class="">
-
-    </div>
+    <header>
+        <h1>-You can login or register here-</h1>
+    </header>
+    <main>
+        <div class="Login">
+            <h2>Login</h2>
+            <form action="../controller/UserController.php" method="post">
+                <input type="hidden" name="type" value="log">
+                <div class="data">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="Enter your email address" required>
+                <label for="password">password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <input type="submit" value="Login" class="btn"> 
+            </form>
+        </div>
+        <div class="Register">
+            <h2>Register</h2>
+            <form action="../controller/UserController.php" method="post">
+                <input type="hidden" name="type" value="reg">
+                <div class="data">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" placeholder="Enter your name" required>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="Enter your email address" required>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <input type="submit" value="Register" class="btn"> 
+            </form>
+        </div>
+    </main>
+    <footer></footer>
 </body>
 </html>
